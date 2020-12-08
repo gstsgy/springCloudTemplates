@@ -1,0 +1,49 @@
+--set @tablename = 'test11'
+create table role_menu
+(
+
+    insert_id varchar(255) not null,
+    insert_ymd varchar(255) not null,
+    update_ymd varchar(255) not null,
+    update_id varchar(255) not null,
+    remark varchar(255),
+    remark1 varchar(255),
+    remark2 varchar(255),
+    remark3 varchar(255),
+    remark4 varchar(255),
+    remark5 varchar(255),
+    seq int,
+    effective int
+
+)
+go
+
+exec sp_addextendedproperty 'MS_Description', '新增人', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'insert_id'
+go
+
+exec sp_addextendedproperty 'MS_Description', '新增日期', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'insert_ymd'
+go
+
+exec sp_addextendedproperty 'MS_Description', '更新日期', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'update_ymd'
+go
+
+exec sp_addextendedproperty 'MS_Description', '更新人', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'update_id'
+go
+
+exec sp_addextendedproperty 'MS_Description', '备用字段', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'remark1'
+go
+
+exec sp_addextendedproperty 'MS_Description', '备用字段', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'remark2'
+go
+
+exec sp_addextendedproperty 'MS_Description', '备用字段', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'remark3'
+go
+
+exec sp_addextendedproperty 'MS_Description', '备用字段', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'remark4'
+go
+
+exec sp_addextendedproperty 'MS_Description', '备用字段', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'remark5'
+go
+
+exec sp_addextendedproperty 'MS_Description', '是否有效', 'SCHEMA', 'dbo', 'TABLE', role_menu, 'COLUMN', 'effective'
+go

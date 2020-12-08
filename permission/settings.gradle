@@ -1,0 +1,5 @@
+/*
+rootProject.name = 'permission'
+
+includeFlat 'common' //以下两行代码可以用此句代替，表示的是平级*/
+includeFlat 'common'

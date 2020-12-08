@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sr.suray.wms.common.mapper.DbUtilMapper">
+    <select id="test"  resultType="java.util.HashMap">
+        select * from Storageinfo
+    </select>
+
+
+    <!--插入单条记录-->
+    <insert id="insert" parameterType="com.guyue.common.bean.InsertModel" >
+    insert into ${tableName} (
+        <foreach collection="fields" index="index" item="item" separator=",">
+        ${item}
+        </foreach>
+        ) values
+        <foreach collection="values" index="index" item="item" separator=",">
+            (
+            <foreach collection="item" index="i" item="it" separator=",">
+                ${it}
+            </foreach>
+            )
+        </foreach>
+</insert>
+
+
+    <update id="update"  parameterType="com.guyue.common.bean.UpdateModel">
+            update ${tableName}
+            <set>
+                <foreach collection="setdata.entrySet()" item="item" index="index" separator=",">
+                ${index}=${item}
+                </foreach>
+            </set>
+            <where>
+                <foreach collection="wheredata.entrySet()" item="item" index="index"  >
+                 and   ${index}=${item}
+                </foreach>
+            </where>
+    </update>
+
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guyue.permission.mapper.RoleMenuMapper">
+    <select id="selectMenuIdByRole" resultType="com.guyue.permission.bean.db.MenuDO">
+        select m.* from role_menu r,menu m
+    where r.menu_id = m.id
+        and r.effective = '1'
+        and r.role_id = #{roleId}
+        and m.type = #{type}
+    </select>
+</mapper>

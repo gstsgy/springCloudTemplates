@@ -1,0 +1,19 @@
+文档接口
+1. 登录接口
+  url ： /auth/login
+  method : post
+  data ： {
+    code : "用户名" ,
+    passwd : "密码"
+  }
+
+2. 获取菜单 及路由
+    url : /auth/menus
+    method : get
+    params : type = 1 //菜单类型，number类型，1 是 bs ，2是 pda
+
+
+2. 获取按钮权限
+    url : /auth/funs
+    method : get
+    params : type = 1 //菜单类型，number类型，1 是 bs ，2是 pda

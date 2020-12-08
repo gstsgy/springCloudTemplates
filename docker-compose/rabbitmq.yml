@@ -1,0 +1,23 @@
+version: '3'
+services:
+  #服务名称
+  rabbitmq:
+    #容器名称
+    container_name: rabbitmq
+    #镜像名称
+    image: rabbitmq:3.8.3-management
+    #总是重启后启动
+    restart: always
+    #端口映射
+    ports:
+      - 5672:5672
+      - 15672:15672
+    hostname: rabbitmq
+    #挂载
+    volumes:
+      - /home/suray/program/rabbitmq/data:/var/lib/rabbitmq
+    #环境变量
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+      - TZ=Asia/Shanghai
